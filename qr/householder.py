@@ -14,8 +14,8 @@ def householder(a: np.ndarray):
         v_k = x.copy()
         v_k[0] += np.sign(x[0]) * np.linalg.norm(x)
         v_k = v_k / np.linalg.norm(v_k)
-        sub = (v_k @ r[k:m, k:n]).reshape(1, -1)
-        sub = 2 * v_k.reshape(-1, 1) @ sub
+        # sub = (v_k @ r[k:m, k:n]).reshape(1, -1)
+        # sub = 2 * v_k.reshape(-1, 1) @ sub
         # r[k:m, k:n] = r[k:m, k:n] - sub
         
         q_i = np.eye(N=m)
