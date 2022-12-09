@@ -1,6 +1,6 @@
 import numpy as np
 from typing import Union
-from solver import AbstractQRSolver, SolverFactory
+from .solver import AbstractQRSolver, SolverFactory
 
 @SolverFactory.register('householder')
 class HouseHolderQRSolver(AbstractQRSolver):

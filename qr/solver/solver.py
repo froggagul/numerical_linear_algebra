@@ -4,6 +4,7 @@ import numpy as np
 from numpy.typing import NDArray
 from typing import Tuple
 import warnings
+import numpy as np
 
 class AbstractQRSolver(metaclass=ABCMeta):
     def __init__(self, **kwargs) -> None:

@@ -1,5 +1,5 @@
 import numpy as np
-from solver import AbstractQRSolver, SolverFactory
+from .solver import SolverFactory, AbstractQRSolver
 
 @SolverFactory.register('cgs')
 class CGSQRSolver(AbstractQRSolver):
@@ -22,6 +22,7 @@ class CGSQRSolver(AbstractQRSolver):
 
 if __name__ == "__main__":
     solver = SolverFactory.create_solver('cgs')
+
     a = np.array([[1, 2, 3], [2, 3, 1], [3, 1, 2]])
     # a = np.array([[2, 3, 3], [3, 2, 2], [1, 1, 5]])
     q, r = solver.solve(a)

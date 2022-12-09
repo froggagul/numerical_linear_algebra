@@ -1,5 +1,5 @@
 import numpy as np
-from solver import AbstractQRSolver, SolverFactory
+from .solver import AbstractQRSolver, SolverFactory
 
 @SolverFactory.register('mgs')
 class MGSQRSolver(AbstractQRSolver):
