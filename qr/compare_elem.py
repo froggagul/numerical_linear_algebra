@@ -33,8 +33,9 @@ if __name__ == "__main__":
     
     fig, axs = plt.subplots(1, 3, sharey=True)
     # fig.title('cgs vs mgs vs householder orthogonality')
-    
+    titles = ["cgs", "mgs", "householder"]
     for i, ax in enumerate(axs):
+        ax.set_title(titles[i])
         sns.heatmap(errors[i], linewidth=0.5, ax = ax, vmin=0, vmax=8e-19)
  
     plt.show()

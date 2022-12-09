@@ -19,7 +19,7 @@ if __name__ == "__main__":
     indexs = []
     xs = []
 
-    for A in As:
+    for i, A in enumerate(As):
         if np.linalg.det(A) == 0: # A must be full rank
             continue
 
@@ -36,7 +36,8 @@ if __name__ == "__main__":
         householder_errors.append(householder_error)
         
         # xs.append(np.linalg.det(A))
-        xs.append(np.linalg.cond(A))
+        # xs.append(np.linalg.cond(A))
+        xs.append(i)
     #        if mgs_error > cgs_error:
     #            print('mgs > cgs\n', A, np.linalg.det(A))
     #        if householder_error > mgs_error:
@@ -48,6 +49,7 @@ if __name__ == "__main__":
 
     plt.legend()
     plt.ylabel('orthogonality error')
+    plt.xlabel('condition number')
     plt.title('cgs vs mgs vs householder orthogonality')
     
     plt.show()
