@@ -1,8 +1,8 @@
 import numpy as np
-from .solver import SolverFactory, AbstractQRSolver
+from .solver import SolverFactory, QRSolver
 
 @SolverFactory.register('cgs')
-class CGSQRSolver(AbstractQRSolver):
+class CGSQRSolver(QRSolver):
     def solve(self, a: np.ndarray):
         assert len(a.shape) == 2
         m, n = a.shape

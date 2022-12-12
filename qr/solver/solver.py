@@ -6,7 +6,7 @@ from typing import Tuple
 import warnings
 import numpy as np
 
-class AbstractQRSolver(metaclass=ABCMeta):
+class QRSolver(metaclass=ABCMeta):
     def __init__(self, **kwargs) -> None:
         pass
     @abstractmethod
@@ -18,7 +18,7 @@ class SolverFactory:
 
     @classmethod
     def register(cls, name):
-        def inner_wrapper(wrapped_class: AbstractQRSolver) -> Callable:
+        def inner_wrapper(wrapped_class: QRSolver) -> Callable:
             if name in cls.registry:
                 warnings.warn(f'Register {name} already exists. Will replace it')
             cls.registry[name] = wrapped_class

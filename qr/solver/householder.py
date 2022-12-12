@@ -1,9 +1,9 @@
 import numpy as np
 from typing import Union
-from .solver import AbstractQRSolver, SolverFactory
+from .solver import QRSolver, SolverFactory
 
 @SolverFactory.register('householder')
-class HouseHolderQRSolver(AbstractQRSolver):
+class HouseHolderQRSolver(QRSolver):
     def solve(self, a: np.ndarray):
         assert len(a.shape) == 2
         m, n = a.shape
